@@ -105,6 +105,7 @@
                 count++;
                 steps[count-1].classList.add('active');
             }
+            if(count === 4)next.disabled = true;
             prev.disabled = false;
         })
         prev.addEventListener('click', () => {
@@ -112,6 +113,7 @@
             count--;
             steps[count].classList.remove('active');
             process.style.width = (count-1)*33 + "%";
+            next.disabled = false;
         })
     </script>
 </body>
