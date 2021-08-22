@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: rgb(246, 247, 251);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            justify-content:space-between;
+            width: 350px;
+            position: relative;
+        }
+        .step {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            border: 3px solid rgb(224, 224, 224);
+            text-align: center;
+            line-height: 30px;
+            color: rgb(165, 159, 159);
+            background-color: white;
+            transition: all 0.3s linear;
+        }
+        .container::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background-color: rgb(224, 224, 224);
+            height: 3px;
+            width: 100%;
+            z-index: -2;
+        }
+        .process {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: -1;
+            background-color: rgb(52, 152, 219);
+            height: 3px;
+            width: 0%;
+            transition: all 0.3s linear;
+        }
+        .active {
+            border-color: rgb(52, 152, 219);
+            color: rgb(52, 152, 219);
+        }
+        .button-div {
+            margin-top: 30px;
+            text-align: center;
+        }
+        button {
+            text-align: center;
+            background-color: rgb(52, 152, 219);
+            padding: 8px 30px;
+            text-decoration: none;
+            border: 0;
+            border-radius: 6px;
+            color: white;
+        }
+        button[disabled] {
+            background-color: rgb(165, 159, 159);
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <div class="container">
+        <div class="process"></div>
+        <div class="step active">1</div>
+        <div class="step">2</div>
+        <div class="step">3</div>
+        <div class="step">4</div>
+    </div>
+    <div class="button-div">
+        <button disabled id="prev">Prev</button>
+        <button style="margin-left: 10px;" id="next">Next</button>
+    </div>
+    </div>
+    <script src="./dist/bundle.js"></script>
+    <script>
+        let count = 1;
+        let steps = document.querySelectorAll('.step');
+        let prev = document.querySelector('#prev');
+        let next = document.querySelector('#next');
+        let process = document.querySelector('.process');
+        next.addEventListener('click', () => {
+            if(count < 4){
+                process.style.width = count*33 + "%";
+                count++;
+                steps[count-1].classList.add('active');
+            }
+            prev.disabled = false;
+        })
+        prev.addEventListener('click', () => {
+            if(count === 2)prev.disabled = true;
+            count--;
+            steps[count].classList.remove('active');
+            process.style.width = (count-1)*33 + "%";
+        })
+    </script>
+</body>
+</html>

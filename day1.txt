@@ -1,0 +1,11 @@
+background-size: cover将背景图片拉伸到和元素一样大	宽高谁大基于谁
+元素的classList.contains()判断元素是否有对应类名返回布尔值
+transition:
+transition-property: 设置过度效果的CSS属性名	多个属性可以用,隔开		可以设置all
+transition-duration: 过度效果秒数	5s或5ms
+transition-timing-function: 过渡效果速度曲线
+transition-delay: 过渡效果从何时开始
+JS添加active类  css中可以设置.active h3 //意思是active类下的h3
+
+disabled属性在JS中直接 元素.disabled= true/false设置
+设置百分比的宽度可以 元素.style.width = count*33 + "%";
