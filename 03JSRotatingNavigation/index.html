@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../littleIcon/font_j7yd6mjfljm/iconfont.css">
     <style>
         *{
             padding: 0;
@@ -70,14 +71,14 @@
             transition: transform 0.4s ease-in;
 
         }
-        
+
 
         ul li+li {
-            margin-left: 30px;
+            margin-left: 26px;
             transform: translateX(-250%);
         }
         ul li+li+li {
-            margin-left: 45px;
+            margin-left: 36px;
             transform: translateX(-300%);
         }
         ul {
@@ -91,6 +92,11 @@
         .container.rotate-Content + nav li {
             transform: translateX(0);
             transition-delay: 0.3s;
+        }
+
+        .iconfont {
+            font-size: 17px;
+            margin-right: 5px;
         }
     </style>
 </head>
@@ -115,9 +121,9 @@
     </div>
     <nav>
         <ul>
-            <li>HOME</li>
-            <li>ABOUT</li>
-            <li>CONTACT</li>
+            <li><span class="iconfont icon-shouye-01"></span>HOME</li>
+            <li><span class="iconfont icon-icon-24-wode"></span>ABOUT</li>
+            <li><span class="iconfont icon-lianxi"></span>CONTACT</li>
         </ul>
     </nav>
 

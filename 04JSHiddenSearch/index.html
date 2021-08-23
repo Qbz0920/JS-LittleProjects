@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../littleIcon/font_j7yd6mjfljm/iconfont.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+            height: 100vh;
+            position: relative;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .searchButton {
+            border: 0;
+            background-color: white;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            transition: transform 0.3s linear;
+        }
+        .iconfont {
+            font-size: 30px;
+        }
+        .input {
+            height: 50px;
+            width: 50px;
+            border: 0;
+            outline: none;
+            padding: 0 17px;
+            font-size: 17px;
+            transition: width 0.3s linear;
+            box-sizing: border-box;
+        }
+        .container.active .input {
+            width: 200px;
+        }
+        .container.active .searchButton {
+            transform: translateX(47px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input class="input" type="text" placeholder="search...">
+        <button class="searchButton"><span class="iconfont icon-search"></span></button>
+    </div>
+
+    <script>
+        let flag = true;
+        let container = document.querySelector('.container');
+        let searchButton = document.querySelector('.searchButton');
+        searchButton.addEventListener('click', () => {
+            if(flag === true){
+                container.classList.add('active');
+                flag = false;
+            }
+            else {
+                container.classList.remove('active');
+                flag = true;
+            }
+        })
+    </script>
+</body>
+</html>

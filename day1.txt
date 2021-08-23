@@ -9,3 +9,7 @@ JS添加active类  css中可以设置.active h3 //意思是active类下的h3
 
 disabled属性在JS中直接 元素.disabled= true/false设置
 设置百分比的宽度可以 元素.style.width = count*33 + "%";
+
+img有宽度属性直接在html中设置
+
+没加动画transition就会直接变换
